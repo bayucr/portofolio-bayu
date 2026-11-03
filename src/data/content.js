@@ -1,3 +1,7 @@
+import gymnasyum from "../assets/gymnasyum.jpg";
+import kopiKuy from "../assets/kopi-kuy.jpg";
+import brainwave from "../assets/brainwave.jpg";
+
 export const content = {
   id: {
     nav: {
@@ -26,6 +30,7 @@ export const content = {
           tech: ["Next.js", "TypeScript", "Supabase"],
           demo: "https://gymnasyum-app.vercel.app/",
           repo: "https://github.com/bayucr/gymnasyum-app",
+          image: gymnasyum,
         },
         {
           title: "Kopi Kuy",
@@ -34,6 +39,7 @@ export const content = {
           tech: ["React", "JavaScript"],
           demo: "https://bayucr.github.io/kopi-kuy/",
           repo: "https://github.com/bayucr/kopi-kuy",
+          image: kopiKuy,
         },
         {
           title: "Brainwave",
@@ -41,6 +47,7 @@ export const content = {
           tech: ["React"],
           demo: "https://bayucr.github.io/brainwave/",
           repo: "https://github.com/bayucr/brainwave",
+          image: brainwave,
         },
       ],
       demoLabel: "Lihat demo",
@@ -95,6 +102,7 @@ export const content = {
           tech: ["Next.js", "TypeScript", "Supabase"],
           demo: "https://gymnasyum-app.vercel.app/",
           repo: "https://github.com/bayucr/gymnasyum-app",
+          image: gymnasyum,
         },
         {
           title: "Kopi Kuy",
@@ -102,6 +110,7 @@ export const content = {
           tech: ["React", "JavaScript"],
           demo: "https://bayucr.github.io/kopi-kuy/",
           repo: "https://github.com/bayucr/kopi-kuy",
+          image: kopiKuy,
         },
         {
           title: "Brainwave",
@@ -109,6 +118,7 @@ export const content = {
           tech: ["React"],
           demo: "https://bayucr.github.io/brainwave/",
           repo: "https://github.com/bayucr/brainwave",
+          image: brainwave,
         },
       ],
       demoLabel: "View demo",
