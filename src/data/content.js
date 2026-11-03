@@ -13,6 +13,8 @@ export const content = {
       intro:
         "Saya membangun aplikasi web dengan JavaScript, React, dan Express.",
       cta: "Hubungi saya",
+      badge: "Terbuka untuk kesempatan",
+      cta2: "Lihat proyek",
     },
     projects: {
       title: "Proyek Pilihan",
@@ -80,6 +82,8 @@ export const content = {
       role: "Full Stack Developer",
       intro: "I build web applications with JavaScript, React, and Express.",
       cta: "Get in touch",
+      badge: "Open to opportunities",
+      cta2: "View projects",
     },
     projects: {
       title: "Selected Projects",
