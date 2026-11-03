@@ -1,4 +1,6 @@
-export default function Navbar({ lang, setLang, t }) {
+import { Moon, Sun } from "lucide-react";
+
+export default function Navbar({ lang, setLang, theme, toggleTheme, t }) {
   const links = [
     { href: "#projects", label: t.nav.projects },
     { href: "#skills", label: t.nav.skills },
@@ -7,38 +9,51 @@ export default function Navbar({ lang, setLang, t }) {
   ];
 
   return (
-    <header className="sticky top-0 z-10 border-b border-neutral-200 bg-white/80 backdrop-blur">
+    <header className="sticky top-0 z-10 border-b border-slate-200 bg-white/70 backdrop-blur dark:border-slate-800 dark:bg-slate-950/70">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href="#" className="font-semibold text-neutral-900">
-          Bayu<span className="text-indigo-600">.</span>
+        <a href="#" className="font-display text-lg font-bold">
+          Bayu<span className="gradient-text">.</span>
         </a>
 
-        <div className="flex items-center gap-6">
-          <ul className="hidden gap-6 text-sm text-neutral-600 sm:flex">
+        <div className="flex items-center gap-4">
+          <ul className="hidden gap-6 text-sm text-slate-600 sm:flex dark:text-slate-400">
             {links.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="hover:text-neutral-900">
+                <a
+                  href={link.href}
+                  className="hover:text-slate-900 dark:hover:text-white"
+                >
                   {link.label}
                 </a>
               </li>
             ))}
           </ul>
 
-          <div className="flex overflow-hidden rounded-md border border-neutral-300 text-xs font-medium">
+          <div className="flex overflow-hidden rounded-md border border-slate-300 text-xs font-medium dark:border-slate-700">
             {["id", "en"].map((code) => (
               <button
                 key={code}
                 onClick={() => setLang(code)}
                 className={`px-3 py-1.5 uppercase ${
                   lang === code
-                    ? "bg-neutral-900 text-white"
-                    : "bg-white text-neutral-600 hover:bg-neutral-100"
+                    ? "gradient-bg text-white"
+                    : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800"
                 }`}
               >
                 {code}
               </button>
             ))}
           </div>
+
+          <button
+            onClick={toggleTheme}
+            aria-label={
+              theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+            }
+            className="rounded-md border border-slate-300 p-2 text-slate-600 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800"
+          >
+            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
         </div>
       </nav>
     </header>
