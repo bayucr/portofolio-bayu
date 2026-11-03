@@ -12,7 +12,7 @@ export default function App() {
   const t = content[lang];
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900">
+    <div className="min-h-screen">
       <Navbar lang={lang} setLang={setLang} t={t} />
       <main>
         <Hero t={t} />

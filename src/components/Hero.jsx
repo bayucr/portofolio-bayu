@@ -2,7 +2,7 @@ export default function Hero({ t }) {
   return (
     <section className="mx-auto max-w-5xl px-6 py-24 sm:py-32">
       <p className="text-sm font-medium text-indigo-600">{t.hero.greeting}</p>
-      <h1 className="mt-3 text-4xl font-bold tracking-tight text-neutral-900 sm:text-6xl">
+      <h1 className="font-display gradient-text mt-3 text-4xl font-bold tracking-tight sm:text-6xl">
         {t.hero.name}
       </h1>
       <p className="mt-4 text-xl text-neutral-500">{t.hero.role}</p>

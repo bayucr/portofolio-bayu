@@ -1,5 +1,46 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+/* Mode gelap dikendalikan lewat class "dark" di <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Font */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Gradasi utama: indigo -> violet -> pink */
+@utility gradient-bg {
+  background-image: linear-gradient(
+    135deg,
+    var(--color-indigo-500),
+    var(--color-violet-500),
+    var(--color-pink-500)
+  );
+}
+
+@utility gradient-text {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-indigo-500),
+    var(--color-violet-500),
+    var(--color-pink-500)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-50 font-sans text-slate-900 antialiased;
+  }
+
+  html.dark body {
+    @apply bg-slate-950 text-slate-100;
+  }
 }
