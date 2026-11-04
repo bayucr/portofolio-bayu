@@ -20,6 +20,14 @@ export default function App() {
     document.documentElement.classList.toggle("dark", theme === "dark");
   }, [theme]);
 
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    document.title =
+      lang === "id"
+        ? "Bayu Catur Ramadhan | Full Stack Developer"
+        : "Bayu Catur Ramadhan | Full Stack Developer (Portfolio)";
+  }, [lang]);
+
   const toggleTheme = () => {
     const next = theme === "dark" ? "light" : "dark";
     setTheme(next);
