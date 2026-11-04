@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import About from "./components/About";
+import Reveal from "./components/Reveal";
 
 export default function App() {
   const [lang, setLang] = useState("id");
@@ -40,11 +41,21 @@ export default function App() {
       />
       <main>
         <Hero t={t} />
-        <About t={t} />
-        <Projects t={t} />
-        <Skills t={t} />
-        <Education t={t} />
-        <Contact t={t} />
+        <Reveal>
+          <About t={t} />
+        </Reveal>
+        <Reveal>
+          <Projects t={t} />
+        </Reveal>
+        <Reveal>
+          <Skills t={t} />
+        </Reveal>
+        <Reveal>
+          <Education t={t} />
+        </Reveal>
+        <Reveal>
+          <Contact t={t} />
+        </Reveal>
       </main>
       <footer className="border-t border-slate-200 py-8 text-center text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400">
         <p>
