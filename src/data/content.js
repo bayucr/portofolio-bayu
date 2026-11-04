@@ -5,6 +5,7 @@ import brainwave from "../assets/brainwave.jpg";
 export const content = {
   id: {
     nav: {
+      about: "Tentang",
       projects: "Proyek",
       skills: "Skill",
       education: "Belajar",
@@ -19,6 +20,18 @@ export const content = {
       cta: "Hubungi saya",
       badge: "Terbuka untuk kesempatan",
       cta2: "Lihat proyek",
+    },
+    about: {
+      title: "Tentang Saya",
+      paragraphs: [
+        "Saya junior web developer yang saat ini sedang menjalani bootcamp Full Stack Web Developer di Dicoding.",
+        "Saya tertarik pada dunia teknologi, terutama pemrograman dan kecerdasan buatan (AI). Itulah alasan saya mulai belajar pengembangan web, dan saya terus membangun proyek untuk mengasah kemampuan front-end maupun back-end.",
+      ],
+      highlights: [
+        { label: "Fokus", value: "Full Stack Web" },
+        { label: "Sedang belajar", value: "Bootcamp Dicoding" },
+        { label: "Minat", value: "Coding & AI" },
+      ],
     },
     projects: {
       title: "Proyek Pilihan",
@@ -55,7 +68,11 @@ export const content = {
     },
     skills: {
       title: "Skill",
-      items: ["JavaScript", "React", "Express", "GitHub"],
+      groups: [
+        { name: "Frontend", items: ["JavaScript", "React"] },
+        { name: "Backend", items: ["Express"] },
+        { name: "Tools", items: ["GitHub"] },
+      ],
     },
     education: {
       title: "Pendidikan & Belajar",
@@ -78,6 +95,7 @@ export const content = {
 
   en: {
     nav: {
+      about: "About",
       projects: "Projects",
       skills: "Skills",
       education: "Learning",
@@ -91,6 +109,18 @@ export const content = {
       cta: "Get in touch",
       badge: "Open to opportunities",
       cta2: "View projects",
+    },
+    about: {
+      title: "About Me",
+      paragraphs: [
+        "I'm a junior web developer currently enrolled in the Full Stack Web Developer bootcamp at Dicoding.",
+        "I'm drawn to technology, especially programming and artificial intelligence (AI). That's why I started learning web development, and I keep building projects to sharpen both my front-end and back-end skills.",
+      ],
+      highlights: [
+        { label: "Focus", value: "Full Stack Web" },
+        { label: "Currently learning", value: "Dicoding Bootcamp" },
+        { label: "Interests", value: "Coding & AI" },
+      ],
     },
     projects: {
       title: "Selected Projects",
@@ -126,7 +156,11 @@ export const content = {
     },
     skills: {
       title: "Skills",
-      items: ["JavaScript", "React", "Express", "GitHub"],
+      groups: [
+        { name: "Frontend", items: ["JavaScript", "React"] },
+        { name: "Backend", items: ["Express"] },
+        { name: "Tools", items: ["GitHub"] },
+      ],
     },
     education: {
       title: "Education & Learning",

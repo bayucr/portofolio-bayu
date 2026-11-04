@@ -2,6 +2,7 @@ import { Moon, Sun } from "lucide-react";
 
 export default function Navbar({ lang, setLang, theme, toggleTheme, t }) {
   const links = [
+    { href: "#about", label: t.nav.about },
     { href: "#projects", label: t.nav.projects },
     { href: "#skills", label: t.nav.skills },
     { href: "#education", label: t.nav.education },

@@ -6,6 +6,7 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
+import About from "./components/About";
 
 export default function App() {
   const [lang, setLang] = useState("id");
@@ -39,6 +40,7 @@ export default function App() {
       />
       <main>
         <Hero t={t} />
+        <About t={t} />
         <Projects t={t} />
         <Skills t={t} />
         <Education t={t} />
