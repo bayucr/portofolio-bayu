@@ -1,8 +1,26 @@
-import { ExternalLink, Code } from "lucide-react";
+import { useRef, useState } from "react";
+import { ChevronLeft, ChevronRight, ExternalLink, Code } from "lucide-react";
 import SectionTitle from "./SectionTitle";
+
+const GAP = 24; // harus sama dengan gap-6 (6 x 4px = 24px)
 
 export default function Projects({ t }) {
   const { title, items, demoLabel, repoLabel } = t.projects;
+  const trackRef = useRef(null);
+  const [active, setActive] = useState(0);
+
+  // Lebar satu langkah geser = lebar slide + jarak antar slide
+  const getStep = () => trackRef.current.firstElementChild.offsetWidth + GAP;
+
+  const handleScroll = () => {
+    const index = Math.round(trackRef.current.scrollLeft / getStep());
+    setActive(index);
+  };
+
+  const goTo = (index) => {
+    const next = Math.max(0, Math.min(items.length - 1, index));
+    trackRef.current.scrollTo({ left: next * getStep(), behavior: "smooth" });
+  };
 
   return (
     <section
@@ -12,7 +30,11 @@ export default function Projects({ t }) {
       <SectionTitle>{title}</SectionTitle>
 
       {/* Jalur slide */}
-      <div className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div
+        ref={trackRef}
+        onScroll={handleScroll}
+        className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
         {items.map((project, index) => (
           <article
             key={project.title}
@@ -79,6 +101,43 @@ export default function Projects({ t }) {
             </div>
           </article>
         ))}
+      </div>
+
+      {/* Kontrol: panah + titik indikator */}
+      <div className="mt-4 flex items-center justify-center gap-4">
+        <button
+          onClick={() => goTo(active - 1)}
+          disabled={active === 0}
+          aria-label="Previous project"
+          className="rounded-full border border-slate-300 p-2 text-slate-600 transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800"
+        >
+          <ChevronLeft size={18} />
+        </button>
+
+        <div className="flex items-center gap-2">
+          {items.map((project, index) => (
+            <button
+              key={project.title}
+              onClick={() => goTo(index)}
+              aria-label={`Go to project ${index + 1}`}
+              aria-current={active === index}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                active === index
+                  ? "gradient-bg w-8"
+                  : "w-2 bg-slate-300 hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-600"
+              }`}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={() => goTo(active + 1)}
+          disabled={active === items.length - 1}
+          aria-label="Next project"
+          className="rounded-full border border-slate-300 p-2 text-slate-600 transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800"
+        >
+          <ChevronRight size={18} />
+        </button>
       </div>
     </section>
   );
