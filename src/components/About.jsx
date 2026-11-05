@@ -6,8 +6,6 @@ export default function About({ t }) {
   return (
     <section id="about" className="mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
       <SectionTitle>{title}</SectionTitle>
-      <div className="gradient-bg mt-3 h-1 w-16 rounded-full" />
-
       <div className="mt-10 grid gap-10 md:grid-cols-[1.5fr_1fr]">
         <div className="space-y-4 text-slate-600 dark:text-slate-400">
           {paragraphs.map((text) => (
