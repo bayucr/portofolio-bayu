@@ -1,11 +1,11 @@
+import SectionTitle from "./SectionTitle";
+
 export default function About({ t }) {
   const { title, paragraphs, highlights } = t.about;
 
   return (
     <section id="about" className="mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
-      <h2 className="font-display text-3xl font-bold text-slate-900 dark:text-white">
-        {title}
-      </h2>
+      <SectionTitle>{title}</SectionTitle>
       <div className="gradient-bg mt-3 h-1 w-16 rounded-full" />
 
       <div className="mt-10 grid gap-10 md:grid-cols-[1.5fr_1fr]">

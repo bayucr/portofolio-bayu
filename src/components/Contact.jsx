@@ -10,11 +10,11 @@ export default function Contact({ t }) {
         {/* Hiasan lingkaran */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-16 -left-16 h-56 w-56 rounded-full bg-white/10"
+          className="pointer-events-none absolute -top-16 -left-16 h-56 w-56 rounded-full bg-white/5"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-12 -bottom-20 h-64 w-64 rounded-full bg-white/10"
+          className="pointer-events-none absolute -right-12 -bottom-20 h-64 w-64 rounded-full bg-white/5"
         />
 
         <h2 className="font-display relative text-3xl font-bold sm:text-4xl">

@@ -1,4 +1,5 @@
 import { SiJavascript, SiReact, SiExpress, SiGithub } from "react-icons/si";
+import SectionTitle from "./SectionTitle";
 
 // Ikon tiap skill, kuncinya harus sama dengan nama di content.js
 const icons = {
@@ -13,10 +14,7 @@ export default function Skills({ t }) {
 
   return (
     <section id="skills" className="mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
-      <h2 className="font-display text-3xl font-bold text-slate-900 dark:text-white">
-        {title}
-      </h2>
-      <div className="gradient-bg mt-3 h-1 w-16 rounded-full" />
+      <SectionTitle>{title}</SectionTitle>
 
       <div className="mt-10 grid gap-6 md:grid-cols-3">
         {groups.map((group) => (

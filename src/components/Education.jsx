@@ -1,4 +1,5 @@
 import { GraduationCap } from "lucide-react";
+import SectionTitle from "./SectionTitle";
 
 export default function Education({ t }) {
   const { title, items } = t.education;
@@ -8,10 +9,7 @@ export default function Education({ t }) {
       id="education"
       className="mx-auto max-w-5xl scroll-mt-20 px-6 py-16"
     >
-      <h2 className="font-display text-3xl font-bold text-slate-900 dark:text-white">
-        {title}
-      </h2>
-      <div className="gradient-bg mt-3 h-1 w-16 rounded-full" />
+      <SectionTitle>{title}</SectionTitle>
 
       <ul className="mt-10 space-y-8 border-l-2 border-slate-200 pl-8 dark:border-slate-800">
         {items.map((item) => (

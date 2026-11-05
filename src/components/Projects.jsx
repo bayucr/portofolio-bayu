@@ -1,11 +1,5 @@
 import { ExternalLink, Code } from "lucide-react";
-
-// Warna label teknologi, dipakai bergantian
-const chipColors = [
-  "bg-indigo-50 text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300",
-  "bg-violet-50 text-violet-700 dark:bg-violet-500/10 dark:text-violet-300",
-  "bg-pink-50 text-pink-700 dark:bg-pink-500/10 dark:text-pink-300",
-];
+import SectionTitle from "./SectionTitle";
 
 export default function Projects({ t }) {
   const { title, items, demoLabel, repoLabel } = t.projects;
@@ -15,10 +9,7 @@ export default function Projects({ t }) {
       id="projects"
       className="mx-auto max-w-5xl scroll-mt-20 px-6 py-16"
     >
-      <h2 className="font-display text-3xl font-bold text-slate-900 dark:text-white">
-        {title}
-      </h2>
-      <div className="gradient-bg mt-3 h-1 w-16 rounded-full" />
+      <SectionTitle>{title}</SectionTitle>
 
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((project, index) => (
@@ -54,10 +45,10 @@ export default function Projects({ t }) {
                 </p>
 
                 <ul className="mt-4 flex flex-wrap gap-2">
-                  {project.tech.map((tech, i) => (
+                  {project.tech.map((tech) => (
                     <li
                       key={tech}
-                      className={`rounded-full px-3 py-1 text-xs font-medium ${chipColors[i % chipColors.length]}`}
+                      className="rounded-full bg-violet-50 px-3 py-1 text-xs font-medium text-violet-700 dark:bg-violet-500/10 dark:text-violet-300"
                     >
                       {tech}
                     </li>
