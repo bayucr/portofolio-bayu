@@ -45,7 +45,7 @@ export default function Navbar({ lang, setLang, theme, toggleTheme, t }) {
         </a>
 
         <div className="flex items-center gap-3 sm:gap-4">
-          <ul className="hidden gap-6 text-sm sm:flex">
+          <ul className="hidden gap-6 text-sm md:flex">
             {links.map((link) => (
               <li key={link.id}>
                 <a href={`#${link.id}`} className={linkClass(link.id)}>
@@ -85,7 +85,7 @@ export default function Navbar({ lang, setLang, theme, toggleTheme, t }) {
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
             aria-expanded={open}
-            className="rounded-md border border-slate-300 p-2 text-slate-600 hover:bg-slate-100 sm:hidden dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800"
+            className="rounded-md border border-slate-300 p-2 text-slate-600 hover:bg-slate-100 md:hidden dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800"
           >
             {open ? <X size={16} /> : <Menu size={16} />}
           </button>
@@ -94,7 +94,7 @@ export default function Navbar({ lang, setLang, theme, toggleTheme, t }) {
 
       {/* Menu untuk HP */}
       {open && (
-        <ul className="space-y-1 border-t border-slate-200 px-6 py-3 text-sm sm:hidden dark:border-slate-800">
+        <ul className="space-y-1 border-t border-slate-200 px-6 py-3 text-sm md:hidden dark:border-slate-800">
           {links.map((link) => (
             <li key={link.id}>
               <a
