@@ -40,17 +40,17 @@ export default function Hero({ t }) {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="#contact"
+              href="#projects"
               className="gradient-bg inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-medium text-white shadow-lg shadow-violet-500/30 transition hover:opacity-90"
             >
-              {t.hero.cta}
+              {t.hero.cta2}
               <ArrowRight size={16} />
             </a>
             <a
-              href="#projects"
+              href="#contact"
               className="rounded-md border border-slate-300 px-5 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
             >
-              {t.hero.cta2}
+              {t.hero.cta}
             </a>
           </div>
         </div>
