@@ -3,7 +3,7 @@ import foto from "../assets/pasfoto.jpg";
 
 export default function Hero({ t }) {
   return (
-    <section className="relative isolate overflow-hidden">
+    <section className="relative">
       {/* Blob gradasi di latar */}
       <div
         aria-hidden="true"

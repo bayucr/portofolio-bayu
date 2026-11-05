@@ -8,6 +8,7 @@ import Education from "./components/Education";
 import Contact from "./components/Contact";
 import About from "./components/About";
 import Reveal from "./components/Reveal";
+import Background from "./components/Background";
 
 export default function App() {
   const [lang, setLang] = useState("id");
@@ -40,6 +41,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen">
+      <Background />
       <Navbar
         lang={lang}
         setLang={setLang}
