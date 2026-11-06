@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, Code } from "lucide-react";
 import SectionTitle from "./SectionTitle";
 
@@ -8,6 +8,28 @@ export default function Projects({ t }) {
 
   const goTo = (index) => {
     setActive(Math.max(0, Math.min(items.length - 1, index)));
+  };
+
+  // Menyimpan titik awal sentuhan jari
+  const touchStart = useRef(null);
+
+  const handleTouchStart = (e) => {
+    const touch = e.touches[0];
+    touchStart.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const handleTouchEnd = (e) => {
+    if (!touchStart.current) return;
+
+    const touch = e.changedTouches[0];
+    const dx = touch.clientX - touchStart.current.x;
+    const dy = touch.clientY - touchStart.current.y;
+    touchStart.current = null;
+
+    // Abaikan gesekan pendek (di bawah 50px) atau yang lebih condong vertikal
+    if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy)) return;
+
+    goTo(dx < 0 ? active + 1 : active - 1);
   };
 
   const handleKeyDown = (e) => {
@@ -30,10 +52,13 @@ export default function Projects({ t }) {
       {/* Jendela: hanya satu slide yang terlihat */}
       <div
         onKeyDown={handleKeyDown}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onTouchCancel={() => (touchStart.current = null)}
         tabIndex={0}
         role="region"
         aria-label={title}
-        className="mt-10 overflow-hidden rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
+        className="mt-10 touch-pan-y overflow-hidden rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
       >
         {/* Jalur: semua slide berjajar, digeser dengan translateX */}
         <div
