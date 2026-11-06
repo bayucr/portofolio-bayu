@@ -13,13 +13,24 @@ export default function Projects({ t }) {
   const getStep = () => trackRef.current.firstElementChild.offsetWidth + GAP;
 
   const handleScroll = () => {
-    const index = Math.round(trackRef.current.scrollLeft / getStep());
-    setActive(index);
+    const el = trackRef.current;
+    const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 2;
+    setActive(atEnd ? items.length - 1 : Math.round(el.scrollLeft / getStep()));
   };
 
   const goTo = (index) => {
     const next = Math.max(0, Math.min(items.length - 1, index));
     trackRef.current.scrollTo({ left: next * getStep(), behavior: "smooth" });
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      goTo(active + 1);
+    } else if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      goTo(active - 1);
+    }
   };
 
   return (
@@ -33,12 +44,18 @@ export default function Projects({ t }) {
       <div
         ref={trackRef}
         onScroll={handleScroll}
-        className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        onKeyDown={handleKeyDown}
+        tabIndex={0}
+        role="region"
+        aria-label={title}
+        className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto rounded-2xl pb-4 outline-none [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-violet-500 [&::-webkit-scrollbar]:hidden"
       >
         {items.map((project, index) => (
           <article
             key={project.title}
-            className="w-full shrink-0 snap-center overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900"
+            className={`w-[88%] shrink-0 snap-start overflow-hidden rounded-2xl border border-slate-200 bg-white transition-opacity duration-300 md:w-[80%] dark:border-slate-800 dark:bg-slate-900 ${
+              active === index ? "opacity-100" : "opacity-60"
+            }`}
           >
             {/* Gambar di atas */}
             {project.image ? (
