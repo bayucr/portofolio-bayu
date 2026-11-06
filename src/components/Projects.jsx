@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, ExternalLink, Code } from "lucide-react";
 import SectionTitle from "./SectionTitle";
 
 const arrowClass =
-  "pointer-events-auto rounded-full bg-white/80 p-2 text-slate-700 shadow-lg backdrop-blur transition hover:scale-110 hover:bg-white disabled:pointer-events-none disabled:opacity-0 sm:p-3 dark:bg-slate-900/70 dark:text-slate-200 dark:hover:bg-slate-900";
+  "pointer-events-auto rounded-full bg-white/80 p-2 text-slate-700 shadow-lg backdrop-blur transition hover:scale-110 hover:bg-white disabled:pointer-events-none disabled:opacity-0 motion-reduce:transition-none sm:p-3 dark:bg-slate-900/70 dark:text-slate-200 dark:hover:bg-slate-900";
 
 export default function Projects({ t }) {
   const { title, items, demoLabel, repoLabel } = t.projects;
@@ -166,7 +166,7 @@ export default function Projects({ t }) {
             onClick={() => goTo(index)}
             aria-label={`Go to project ${index + 1}`}
             aria-current={active === index}
-            className={`h-2 rounded-full transition-all duration-300 ${
+            className={`h-2 rounded-full transition-all duration-300 motion-reduce:transition-none ${
               active === index
                 ? "gradient-bg w-8"
                 : "w-2 bg-slate-300 hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-600"
@@ -174,6 +174,9 @@ export default function Projects({ t }) {
           />
         ))}
       </div>
+      <p className="sr-only" aria-live="polite">
+        {`${active + 1} / ${items.length}`}
+      </p>
     </section>
   );
 }
