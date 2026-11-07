@@ -36,7 +36,7 @@ export const content = {
       ],
     },
     projects: {
-      title: "Proyek Pilihan",
+      title: "Proyek Terkini",
       items: [
         {
           title: "Gymnasyum App",
@@ -127,7 +127,7 @@ export const content = {
       ],
     },
     projects: {
-      title: "Selected Projects",
+      title: "Latest Projects",
       items: [
         {
           title: "Gymnasyum App",
