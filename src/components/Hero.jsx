@@ -52,25 +52,24 @@ export default function Hero({ t }) {
             />
           </div>
 
-          <div className="mt-6 flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
-            <span>{t.hero.findMe}</span>
+          <div className="mt-6 flex items-center gap-3">
             <a
               href={github}
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
-              className="text-slate-700 transition hover:text-violet-600 dark:text-slate-300 dark:hover:text-violet-400"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-violet-400 hover:text-violet-600 hover:shadow-md hover:shadow-violet-500/20 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-violet-500 dark:hover:text-violet-400"
             >
-              <FaGithub size={22} />
+              <FaGithub size={26} />
             </a>
             <a
               href={linkedin}
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
-              className="text-slate-700 transition hover:text-violet-600 dark:text-slate-300 dark:hover:text-violet-400"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-violet-400 hover:text-violet-600 hover:shadow-md hover:shadow-violet-500/20 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-violet-500 dark:hover:text-violet-400"
             >
-              <FaLinkedin size={22} />
+              <FaLinkedin size={26} />
             </a>
           </div>
         </div>
