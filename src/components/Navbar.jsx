@@ -1,14 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, Moon, Sun, X } from "lucide-react";
 
-const sectionIds = [
-  "home",
-  "about",
-  "projects",
-  "skills",
-  "education",
-  "contact",
-];
+const sectionIds = ["home", "about", "projects", "skills", "why", "contact"];
 
 export default function Navbar({ lang, setLang, theme, toggleTheme, t }) {
   const [open, setOpen] = useState(false);

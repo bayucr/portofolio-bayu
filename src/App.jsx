@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
-import Education from "./components/Education";
+import WhyHire from "./components/WhyHire";
 import Contact from "./components/Contact";
 import About from "./components/About";
 import Reveal from "./components/Reveal";
@@ -61,7 +61,7 @@ export default function App() {
           <Skills t={t} />
         </Reveal>
         <Reveal>
-          <Education t={t} />
+          <WhyHire t={t} />
         </Reveal>
         <Reveal>
           <Contact t={t} />

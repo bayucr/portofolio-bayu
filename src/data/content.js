@@ -9,7 +9,7 @@ export const content = {
       about: "Tentang",
       projects: "Proyek",
       skills: "Skill",
-      education: "Belajar",
+      why: "Kenapa Saya?",
       contact: "Kontak",
     },
     hero: {
@@ -76,13 +76,28 @@ export const content = {
         { name: "Tools", items: ["GitHub"] },
       ],
     },
-    education: {
-      title: "Pendidikan & Belajar",
+    why: {
+      title: "Kenapa Mempekerjakan Saya?",
       items: [
         {
-          name: "Bootcamp Full Stack Web Developer",
-          place: "Dicoding",
-          period: "Sedang berjalan",
+          icon: "communicative",
+          title: "Komunikatif",
+          text: "Saya terbiasa menjelaskan ide dan kendala dengan jelas, dan tidak ragu bertanya saat ada yang belum dipahami.",
+        },
+        {
+          icon: "cooperative",
+          title: "Kooperatif",
+          text: "Saya terbuka pada masukan dan senang bekerja dalam tim, karena produk yang baik lahir dari kolaborasi.",
+        },
+        {
+          icon: "ai",
+          title: "AI-Driven",
+          text: "Saya memakai AI untuk bekerja lebih cepat dan efisien, tetapi tetap memastikan saya memahami kode yang dihasilkan.",
+        },
+        {
+          icon: "passion",
+          title: "Passion",
+          text: "Saya antusias mengikuti perkembangan teknologi dan terus belajar lewat proyek nyata.",
         },
       ],
     },
@@ -101,7 +116,7 @@ export const content = {
       about: "About",
       projects: "Projects",
       skills: "Skills",
-      education: "Learning",
+      why: "Why Me?",
       contact: "Contact",
     },
     hero: {
@@ -166,13 +181,28 @@ export const content = {
         { name: "Tools", items: ["GitHub"] },
       ],
     },
-    education: {
-      title: "Education & Learning",
+    why: {
+      title: "Why Hire Me?",
       items: [
         {
-          name: "Full Stack Web Developer Bootcamp",
-          place: "Dicoding",
-          period: "Ongoing",
+          icon: "communicative",
+          title: "Communicative",
+          text: "I explain ideas and blockers clearly, and I'm not afraid to ask when something isn't clear.",
+        },
+        {
+          icon: "cooperative",
+          title: "Cooperative",
+          text: "I'm open to feedback and enjoy working in a team, because good products come from collaboration.",
+        },
+        {
+          icon: "ai",
+          title: "AI-Driven",
+          text: "I use AI to work faster and more efficiently, while making sure I understand the code it produces.",
+        },
+        {
+          icon: "passion",
+          title: "Passion",
+          text: "I'm enthusiastic about keeping up with technology and keep learning through real projects.",
         },
       ],
     },
