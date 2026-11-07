@@ -20,6 +20,8 @@ export const content = {
       cta: "Hubungi saya",
       badge: "Terbuka untuk kesempatan",
       cta2: "Lihat proyek",
+      cv: "Unduh CV",
+      findMe: "Temukan aku di",
     },
     about: {
       title: "Tentang Saya",
@@ -109,6 +111,8 @@ export const content = {
       cta: "Get in touch",
       badge: "Open to opportunities",
       cta2: "View projects",
+      cv: "Download CV",
+      findMe: "Find me on",
     },
     about: {
       title: "About Me",
