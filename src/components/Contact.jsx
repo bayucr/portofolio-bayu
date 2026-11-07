@@ -5,7 +5,7 @@ export default function Contact({ t }) {
   const { title, text, email, github, linkedin } = t.contact;
 
   return (
-    <section id="contact" className="mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
+    <section id="contact" className="mx-auto max-w-5xl px-6 py-16">
       <div className="gradient-bg relative overflow-hidden rounded-3xl px-8 py-14 text-center text-white shadow-2xl shadow-violet-500/30 sm:px-16">
         {/* Hiasan lingkaran */}
         <div

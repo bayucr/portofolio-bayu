@@ -13,7 +13,7 @@ export default function Skills({ t }) {
   const { title, groups } = t.skills;
 
   return (
-    <section id="skills" className="mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
+    <section id="skills" className="mx-auto max-w-5xl px-6 py-16">
       <SectionTitle>{title}</SectionTitle>
 
       <div className="mt-10 grid gap-6 md:grid-cols-3">

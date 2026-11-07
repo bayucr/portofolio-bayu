@@ -5,10 +5,7 @@ export default function Projects({ t }) {
   const { title, items, demoLabel, repoLabel } = t.projects;
 
   return (
-    <section
-      id="projects"
-      className="mx-auto max-w-5xl scroll-mt-20 px-6 py-16"
-    >
+    <section id="projects" className="mx-auto max-w-5xl px-6 py-16">
       <SectionTitle>{title}</SectionTitle>
 
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

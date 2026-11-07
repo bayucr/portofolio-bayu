@@ -4,7 +4,7 @@ export default function About({ t }) {
   const { title, paragraphs, highlights } = t.about;
 
   return (
-    <section id="about" className="mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
+    <section id="about" className="mx-auto max-w-5xl px-6 py-16">
       <SectionTitle>{title}</SectionTitle>
       <div className="mt-10 grid gap-10 md:grid-cols-[1.5fr_1fr]">
         <div className="space-y-4 text-slate-600 dark:text-slate-400">

@@ -7,7 +7,7 @@ export default function Hero({ t }) {
 
   return (
     <section id="home" className="relative">
-      <div className="mx-auto grid max-w-5xl items-center gap-12 px-6 py-20 md:grid-cols-[1.2fr_1fr] md:py-28">
+      <div className="mx-auto grid max-w-5xl items-center gap-12 px-6 pt-32 pb-20 md:grid-cols-[1.2fr_1fr] md:pt-40 md:pb-28">
         {/* Teks */}
         <div className="order-2 md:order-1">
           <p className="text-sm font-medium text-slate-500 dark:text-slate-400">

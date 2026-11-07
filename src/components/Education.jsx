@@ -5,10 +5,7 @@ export default function Education({ t }) {
   const { title, items } = t.education;
 
   return (
-    <section
-      id="education"
-      className="mx-auto max-w-5xl scroll-mt-20 px-6 py-16"
-    >
+    <section id="education" className="mx-auto max-w-5xl px-6 py-16">
       <SectionTitle>{title}</SectionTitle>
 
       <ul className="mt-10 space-y-8 border-l-2 border-slate-200 pl-8 dark:border-slate-800">
