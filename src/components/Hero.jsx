@@ -6,7 +6,7 @@ export default function Hero({ t }) {
   const { github, linkedin } = t.contact;
 
   return (
-    <section className="relative">
+    <section id="home" className="relative">
       <div className="mx-auto grid max-w-5xl items-center gap-12 px-6 py-20 md:grid-cols-[1.2fr_1fr] md:py-28">
         {/* Teks */}
         <div className="order-2 md:order-1">

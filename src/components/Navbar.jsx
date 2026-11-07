@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
 import { Menu, Moon, Sun, X } from "lucide-react";
 
-const sectionIds = ["about", "projects", "skills", "education", "contact"];
+const sectionIds = [
+  "home",
+  "about",
+  "projects",
+  "skills",
+  "education",
+  "contact",
+];
 
 export default function Navbar({ lang, setLang, theme, toggleTheme, t }) {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("home");
 
-  const links = [
-    { id: "about", label: t.nav.about },
-    { id: "projects", label: t.nav.projects },
-    { id: "skills", label: t.nav.skills },
-    { id: "education", label: t.nav.education },
-    { id: "contact", label: t.nav.contact },
-  ];
+  const links = sectionIds.map((id) => ({ id, label: t.nav[id] }));
 
   // Tandai menu sesuai section yang sedang tampil di tengah layar
   useEffect(() => {
@@ -34,80 +35,90 @@ export default function Navbar({ lang, setLang, theme, toggleTheme, t }) {
 
   const linkClass = (id) =>
     active === id
-      ? "font-medium text-violet-600 dark:text-violet-400"
-      : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white";
+      ? "gradient-bg text-white shadow-md shadow-violet-500/30"
+      : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800";
 
   return (
-    <header className="sticky top-0 z-10 border-b border-slate-200 bg-white/70 backdrop-blur dark:border-slate-800 dark:bg-slate-950/70">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href="#" className="font-display text-lg font-bold">
-          Bayu<span className="gradient-text">.</span>
-        </a>
+    <header className="fixed inset-x-0 top-4 z-50 px-4">
+      <div className="relative mx-auto max-w-4xl">
+        {/* Pil navbar */}
+        <nav className="flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/70 p-2 shadow-lg shadow-slate-900/5 backdrop-blur-xl dark:border-slate-700/60 dark:bg-slate-900/70">
+          {/* Hamburger (HP dan tablet) */}
+          <button
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            className="rounded-full p-2.5 text-slate-600 hover:bg-slate-100 lg:hidden dark:text-slate-300 dark:hover:bg-slate-800"
+          >
+            {open ? <X size={18} /> : <Menu size={18} />}
+          </button>
 
-        <div className="flex items-center gap-3 sm:gap-4">
-          <ul className="hidden gap-6 text-sm md:flex">
+          {/* Menu desktop, di tengah */}
+          <ul className="hidden flex-1 items-center justify-center gap-1 text-sm font-medium lg:flex">
             {links.map((link) => (
               <li key={link.id}>
-                <a href={`#${link.id}`} className={linkClass(link.id)}>
+                <a
+                  href={`#${link.id}`}
+                  className={`block rounded-full px-4 py-2 transition ${linkClass(link.id)}`}
+                >
                   {link.label}
                 </a>
               </li>
             ))}
           </ul>
 
-          <div className="flex overflow-hidden rounded-md border border-slate-300 text-xs font-medium dark:border-slate-700">
-            {["id", "en"].map((code) => (
-              <button
-                key={code}
-                onClick={() => setLang(code)}
-                className={`px-3 py-1.5 uppercase ${
-                  lang === code
-                    ? "gradient-bg text-white"
-                    : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800"
-                }`}
-              >
-                {code}
-              </button>
-            ))}
+          {/* Pengisi ruang di HP, mendorong kontrol ke kanan */}
+          <div className="flex-1 lg:hidden" />
+
+          {/* Kontrol: bahasa dan tema */}
+          <div className="flex items-center gap-2">
+            <div className="flex rounded-full border border-slate-300 p-0.5 text-xs font-medium dark:border-slate-700">
+              {["id", "en"].map((code) => (
+                <button
+                  key={code}
+                  onClick={() => setLang(code)}
+                  className={`rounded-full px-3 py-1.5 uppercase transition ${
+                    lang === code
+                      ? "gradient-bg text-white"
+                      : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800"
+                  }`}
+                >
+                  {code}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={toggleTheme}
+              aria-label={
+                theme === "dark"
+                  ? "Switch to light mode"
+                  : "Switch to dark mode"
+              }
+              className="rounded-full border border-slate-300 p-2 text-slate-600 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+            >
+              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
           </div>
+        </nav>
 
-          <button
-            onClick={toggleTheme}
-            aria-label={
-              theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
-            }
-            className="rounded-md border border-slate-300 p-2 text-slate-600 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800"
-          >
-            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
-          </button>
-
-          <button
-            onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
-            aria-expanded={open}
-            className="rounded-md border border-slate-300 p-2 text-slate-600 hover:bg-slate-100 md:hidden dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800"
-          >
-            {open ? <X size={16} /> : <Menu size={16} />}
-          </button>
-        </div>
-      </nav>
-
-      {/* Menu untuk HP */}
-      {open && (
-        <ul className="space-y-1 border-t border-slate-200 px-6 py-3 text-sm md:hidden dark:border-slate-800">
-          {links.map((link) => (
-            <li key={link.id}>
-              <a
-                href={`#${link.id}`}
-                onClick={() => setOpen(false)}
-                className={`block rounded-md px-3 py-2 ${linkClass(link.id)}`}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
+        {/* Menu HP: kartu membulat di bawah pil */}
+        {open && (
+          <ul className="absolute inset-x-0 top-full mt-2 space-y-1 rounded-3xl border border-slate-200/80 bg-white/90 p-2 text-sm font-medium shadow-lg backdrop-blur-xl lg:hidden dark:border-slate-700/60 dark:bg-slate-900/90">
+            {links.map((link) => (
+              <li key={link.id}>
+                <a
+                  href={`#${link.id}`}
+                  onClick={() => setOpen(false)}
+                  className={`block rounded-full px-4 py-2.5 transition ${linkClass(link.id)}`}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </header>
   );
 }

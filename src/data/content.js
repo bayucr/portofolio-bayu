@@ -5,6 +5,7 @@ import brainwave from "../assets/brainwave.jpg";
 export const content = {
   id: {
     nav: {
+      home: "Beranda",
       about: "Tentang",
       projects: "Proyek",
       skills: "Skill",
@@ -97,6 +98,7 @@ export const content = {
 
   en: {
     nav: {
+      home: "Home",
       about: "About",
       projects: "Projects",
       skills: "Skills",
