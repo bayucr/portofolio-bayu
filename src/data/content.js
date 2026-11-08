@@ -8,7 +8,7 @@ export const content = {
       home: "Beranda",
       about: "Tentang",
       projects: "Proyek",
-      skills: "Skill",
+      skills: "keahlian",
       why: "Kenapa Saya?",
       contact: "Kontak",
     },
@@ -68,12 +68,8 @@ export const content = {
       repoLabel: "Kode",
     },
     skills: {
-      title: "Skill",
-      groups: [
-        { name: "Frontend", items: ["JavaScript", "React"] },
-        { name: "Backend", items: ["Express"] },
-        { name: "Tools", items: ["GitHub"] },
-      ],
+      title: "Keahlian",
+      items: ["JavaScript", "React", "Express", "GitHub", "Next.js"],
     },
     why: {
       title: "Kenapa Mempekerjakan Saya?",
@@ -173,11 +169,7 @@ export const content = {
     },
     skills: {
       title: "Skills",
-      groups: [
-        { name: "Frontend", items: ["JavaScript", "React"] },
-        { name: "Backend", items: ["Express"] },
-        { name: "Tools", items: ["GitHub"] },
-      ],
+      items: ["JavaScript", "React", "Express", "GitHub", "Next.js"],
     },
     why: {
       title: "Why Hire Me?",
