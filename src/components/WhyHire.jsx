@@ -22,7 +22,7 @@ export default function WhyHire({ t }) {
           return (
             <article
               key={item.title}
-              className="rounded-2xl border border-slate-200 bg-white p-6 text-center transition duration-300 hover:-translate-y-1 hover:border-violet-300 hover:shadow-xl hover:shadow-violet-500/10 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-violet-500/50"
+              className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm dark:border-slate-800 dark:bg-slate-900"
             >
               <div className="gradient-bg mx-auto flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lg shadow-violet-500/30">
                 {Icon && <Icon size={26} />}
